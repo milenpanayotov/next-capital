@@ -1,0 +1,29 @@
+{
+  "name": "capital-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/capital-e2e/src",
+  "targets": {
+    "e2e": {
+      "executor": "@nx/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/capital-e2e/cypress.config.ts",
+        "testingType": "e2e",
+        "devServerTarget": "capital:serve"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "capital:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/capital-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["capital"]
+}
