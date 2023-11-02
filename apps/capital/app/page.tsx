@@ -1,4 +1,6 @@
 import styles from './page.module.scss';
+import Container from '@mui/material/Container';
+import Typography from '@mui/material/Typography';
 
 export default async function Index() {
   /*
@@ -8,6 +10,10 @@ export default async function Index() {
    */
   return (
     <div className={styles.page}>
+      <Container>
+        <Typography variant="h2">Hello World</Typography>
+      </Container>
+
       <div className="wrapper">
         <div className="container">
           <div id="welcome">
